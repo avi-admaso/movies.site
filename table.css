@@ -1,0 +1,20 @@
+.tableNav {
+  background-color: #fa0000;
+  color: rgb(0, 0, 0);
+}
+    /* .moviesTable {
+    border: aqua;
+    border: 3px;
+    } */
+#moviesTable,
+th,
+td {
+  font-family: "Irish Grover", cursive;
+
+  border: 2px solid rgb(255, 0, 0);
+}
+#moviesTable {
+    margin-left: 6%;
+    text-align: center;
+  width: 90%;
+}
