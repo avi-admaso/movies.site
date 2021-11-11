@@ -37,10 +37,10 @@ body {
 }
 #homeHeadline {
   font-family: "Irish Grover", cursive;
-  margin: 24%;
+  margin: 20%;
   margin-top: 5%;
   font-size: 70px;
-  text-shadow: 12px 12px 12px rgb(255, 255, 255);
+  text-shadow: 12px 12px 12px rgb(235, 0, 0);
 }
 .header {
 height: 70px;
@@ -118,6 +118,17 @@ footer .socialMediaContact > a:hover {
   height: 70px;
   width: 400px;
   margin-left:302px ;
+}
+#theMovies{
+  width: 100%,
+}
+.weeksMovies{
+  margin-left: 2%;
+width: 30%;
+}
+.weeksMovies:hover{
+  width: 31%;
+  box-shadow: 5px 5px 5px red;
 }
 /* .bgkImage{
   background-image: url("https://cdn.wallpapersafari.com/80/26/W34E0N.jpg");
