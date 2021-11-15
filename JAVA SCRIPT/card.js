@@ -55,6 +55,13 @@ function orderByRating(x) {
       <img id="imgCard" src = "${details.image}"width = "150px"><p id="ratingNum" >${details.rating}</p></div>`;
   }
 }
+
+function showGif(){
+  theGif.style.display = "block"
+}
+function hideGif(){
+  theGif.style.display = "none"
+}
 document.getElementById("rating");
 document.getElementById("movieName");
 document.getElementById("userSelect");
@@ -62,15 +69,21 @@ document.getElementById("_id");
 document.getElementById("searchBtn");
 
 orderBtn.onclick = function () {
+  container.innerHTML = "";
+  showGif()
+  setTimeout(()=>{
+    hideGif()
   switch (userSelect.value) {
     case "movieName":
       moviesApi(x.data);
       break;
     case "rating":
-      container.innerHTML = "";
+      
       moviesApi(x.data)
         .then((res) => {
-          orderByRating(res);
+          orderByRating(res)
+          
+          
         })
         .catch((rej) => {
           console.log(rej);
@@ -89,7 +102,7 @@ orderBtn.onclick = function () {
         });
       console.log(res);
       break;
-  }
+  } },3000)
 };
 ////////////////THE DELETE////////////////////////
 

@@ -243,13 +243,21 @@ class Movie{
     }
 }
 
-
+function showGifAdd(){
+    mgmGif.style.display = "block"
+}
+function hideGif(){
+    mgmGif.style.display = "none"
+}
 
 theForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+    showGifAdd()
+    setTimeout(()=>{
 
-    let movie =  new Movie (movieName.value,moviesPicture.value,moviesLink.value,movieSynopsis.value,movieRating.value)
-
+        e.preventDefault();
+        
+        let movie =  new Movie (movieName.value,moviesPicture.value,moviesLink.value,movieSynopsis.value,movieRating.value)
+        
     let options = {
         method: 'POST',
         body: JSON.stringify({movie}),
@@ -262,23 +270,28 @@ theForm.addEventListener("submit", (e) => {
     
     let sendDataToApi = async () => {
         try{
+            
             return await fetch(postUrl,options)
-             .then(res => res.json())
+            .then(res => res.json())
         }
         catch(err){
             return err;
         }
+        finally{
+            hideGif()
+        }
     }
-
+    
     sendDataToApi()
-     .then(data => console.log(data));
-
+    .then(data => console.log(data));
+    
+},3000)
 })
 
 
 // let movie1;
 // addBtn.onclick = function () {
-//   movie1 = new Movie(
+    //   movie1 = new Movie(
 //     moviesPicture.value,
 //     moviesLink.value,
 //     movieRating.value,
